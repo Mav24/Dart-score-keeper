@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:DartScoreKeeper.ViewModels"
+             x:Class="DartScoreKeeper.Views.MainPage"
+             x:DataType="viewmodels:MainViewModel"
+             Title="Dart Score Keeper">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+            
+            <!-- Title -->
+            <Label Text="Dart Score Keeper"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,20,0,30"/>
+            
+            <!-- Number of Players -->
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Number of Players" FontSize="18" FontAttributes="Bold"/>
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Button Text="-" 
+                            Command="{Binding DecreasePlayerCountCommand}"
+                            WidthRequest="50"
+                            HeightRequest="50"/>
+                    <Label Text="{Binding NumberOfPlayers}" 
+                           FontSize="24"
+                           VerticalOptions="Center"
+                           WidthRequest="50"
+                           HorizontalTextAlignment="Center"/>
+                    <Button Text="+" 
+                            Command="{Binding IncreasePlayerCountCommand}"
+                            WidthRequest="50"
+                            HeightRequest="50"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            
+            <!-- Player Names -->
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Player Names" FontSize="18" FontAttributes="Bold"/>
+                
+                <Entry Placeholder="Player 1 Name"
+                       Text="{Binding Player1Name}"/>
+                
+                <Entry Placeholder="Player 2 Name"
+                       Text="{Binding Player2Name}"/>
+                
+                <Entry Placeholder="Player 3 Name"
+                       Text="{Binding Player3Name}"/>
+                
+                <Entry Placeholder="Player 4 Name"
+                       Text="{Binding Player4Name}"/>
+            </VerticalStackLayout>
+            
+            <!-- Game Type Selection -->
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Select Game Type" FontSize="18" FontAttributes="Bold"/>
+                
+                <Button Text="501"
+                        Clicked="OnGame501Clicked"/>
+                
+                <Button Text="Cricket"
+                        Clicked="OnCricketClicked"/>
+                
+                <Button Text="Around the Clock"
+                        Clicked="OnAroundTheClockClicked"/>
+                
+                <Button Text="Killer"
+                        Clicked="OnKillerClicked"/>
+            </VerticalStackLayout>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
