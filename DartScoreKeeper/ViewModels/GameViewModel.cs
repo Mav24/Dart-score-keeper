@@ -119,7 +119,7 @@ public partial class GameViewModel : ObservableObject, IQueryAttributable
         if (position.Length >= 2)
         {
             char multiplierChar = position[0];
-            string numberStr = position.Substring(1);
+            string numberStr = position[1..];
             
             if (int.TryParse(numberStr, out int number))
             {

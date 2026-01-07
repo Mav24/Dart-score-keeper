@@ -14,23 +14,27 @@ public partial class MainPage : ContentPage
 		BindingContext = _viewModel;
 	}
 
-	private void OnGame501Clicked(object sender, EventArgs e)
+	private async void OnGame501Clicked(object sender, EventArgs e)
 	{
 		_viewModel.SelectedGameType = GameType.Game501;
+		await _viewModel.StartGameCommand.ExecuteAsync(null);
 	}
 
-	private void OnCricketClicked(object sender, EventArgs e)
+	private async void OnCricketClicked(object sender, EventArgs e)
 	{
 		_viewModel.SelectedGameType = GameType.Cricket;
+		await _viewModel.StartGameCommand.ExecuteAsync(null);
 	}
 
-	private void OnAroundTheClockClicked(object sender, EventArgs e)
+	private async void OnAroundTheClockClicked(object sender, EventArgs e)
 	{
 		_viewModel.SelectedGameType = GameType.AroundTheClock;
+		await _viewModel.StartGameCommand.ExecuteAsync(null);
 	}
 
-	private void OnKillerClicked(object sender, EventArgs e)
+	private async void OnKillerClicked(object sender, EventArgs e)
 	{
 		_viewModel.SelectedGameType = GameType.Killer;
+		await _viewModel.StartGameCommand.ExecuteAsync(null);
 	}
 }

@@ -125,7 +125,7 @@ public partial class GamePage : ContentPage
 		if (text.Length < 2) return null;
 		
 		char multiplierChar = text[0];
-		string numberStr = text.Substring(1);
+		string numberStr = text[1..];
 		
 		if (int.TryParse(numberStr, out int number))
 		{

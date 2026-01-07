@@ -1,5 +1,4 @@
 using Microsoft.Extensions.Logging;
-using CommunityToolkit.Mvvm;
 
 namespace DartScoreKeeper;
 

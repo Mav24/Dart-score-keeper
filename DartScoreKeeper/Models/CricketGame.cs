@@ -12,13 +12,35 @@ public class CricketGame : Game
         if ((score >= 15 && score <= 20) || score == 25)
         {
             int hits = multiplier;
+            int previousHits = CurrentPlayer.CricketScores[score];
             CurrentPlayer.CricketScores[score] += hits;
             CurrentPlayer.DartsThrown++;
             
-            // If player has more than 3 hits and this number is not closed by all other players,
-            // they score points
-            if (CurrentPlayer.CricketScores[score] > 3)
+            // If player now has more than 3 hits and this number is not closed by all other players,
+            // they score points for the extra hits from THIS turn only
+            if (CurrentPlayer.CricketScores[score] > 3 && previousHits >= 3)
             {
+                // Already had 3+, so all new hits score
+                int extraHits = hits;
+                bool allOthersClosed = true;
+                
+                foreach (var player in Players)
+                {
+                    if (player != CurrentPlayer && player.CricketScores[score] < 3)
+                    {
+                        allOthersClosed = false;
+                        break;
+                    }
+                }
+                
+                if (!allOthersClosed)
+                {
+                    CurrentPlayer.Score += score * extraHits;
+                }
+            }
+            else if (CurrentPlayer.CricketScores[score] > 3 && previousHits < 3)
+            {
+                // Just closed this turn, score only the excess
                 int extraHits = CurrentPlayer.CricketScores[score] - 3;
                 bool allOthersClosed = true;
                 
