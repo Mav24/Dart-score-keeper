@@ -7,7 +7,7 @@ This guide will help you set up the development environment and build the Dart S
 ### Required Software
 
 1. **Visual Studio 2022** (version 17.8 or later) or **Visual Studio Code** with appropriate extensions
-2. **.NET 8.0 SDK** or later
+2. **.NET 10.0 SDK** or later
 3. **.NET MAUI workload**
 
 ### Installation Steps
@@ -17,7 +17,7 @@ This guide will help you set up the development environment and build the Dart S
 1. Download and install [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/)
 2. During installation, select the ".NET Multi-platform App UI development" workload
 3. This will automatically install:
-   - .NET 8.0 SDK
+   - .NET 10.0 SDK
    - .NET MAUI workload
    - Android SDK
    - iOS/MacCatalyst build tools (on macOS)
@@ -25,7 +25,7 @@ This guide will help you set up the development environment and build the Dart S
 
 #### Option 2: Visual Studio Code
 
-1. Install [.NET 8.0 SDK](https://dotnet.microsoft.com/download)
+1. Install [.NET 10.0 SDK](https://dotnet.microsoft.com/download)
 2. Install .NET MAUI workload:
    ```bash
    dotnet workload install maui
@@ -73,16 +73,16 @@ This guide will help you set up the development environment and build the Dart S
 3. Run on specific platform:
    ```bash
    # For Android
-   dotnet build -f net8.0-android -t:Run
+   dotnet build -f net10.0-android -t:Run
    
    # For iOS (macOS only)
-   dotnet build -f net8.0-ios -t:Run
+   dotnet build -f net10.0-ios -t:Run
    
    # For MacCatalyst (macOS only)
-   dotnet build -f net8.0-maccatalyst -t:Run
+   dotnet build -f net10.0-maccatalyst -t:Run
    
    # For Windows
-   dotnet build -f net8.0-windows10.0.19041.0 -t:Run
+   dotnet build -f net10.0-windows10.0.19041.0 -t:Run
    ```
 
 ## Running on Emulators/Simulators

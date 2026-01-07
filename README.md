@@ -56,7 +56,7 @@ A cross-platform .NET MAUI dart scorekeeper application for 1–4 players.
 
 ## Requirements
 
-- .NET 8.0 SDK or higher
+- .NET 10.0 SDK or higher
 - Visual Studio 2022 or Visual Studio Code with .NET MAUI workload
 
 ## Building
